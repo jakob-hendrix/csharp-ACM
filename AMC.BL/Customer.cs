@@ -4,6 +4,13 @@ namespace AMC.BL
 {
     public class Customer
     {
+        public Customer()
+        {
+            InstanceCount += 1;
+        }
+
+        public static int InstanceCount { get; set; }
+
         private string _lastName;
 
         public string LastName
@@ -17,7 +24,7 @@ namespace AMC.BL
                 _lastName = value;
             }
         }
-        public string FirstName { get; set; };
+        public string FirstName { get; set; }
 
         public string EmailAddress { get; set; }
 
@@ -27,7 +34,16 @@ namespace AMC.BL
         {
             get
             {
-                return $"{LastName}, {FirstName}";
+                string fullName = LastName;
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if (!string.IsNullOrWhiteSpace(LastName))
+                    {
+                        fullName += ", ";
+                    }
+                    fullName += FirstName;
+                }
+                return fullName;
             }
         }
 

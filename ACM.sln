@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMC.BL", "AMC.BL\AMC.BL.csproj", "{246E6AB6-836D-4B22-9DEE-7E4A88B8AF89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AMC.BL", "AMC.BL\AMC.BL.csproj", "{246E6AB6-836D-4B22-9DEE-7E4A88B8AF89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{426C5DB9-2243-4B94-A607-A95C0F10C355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.BLTest", "ACM.BLTest\ACM.BLTest.csproj", "{C6F3C99C-CE99-496D-AE94-167EBF1E0C71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{246E6AB6-836D-4B22-9DEE-7E4A88B8AF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{246E6AB6-836D-4B22-9DEE-7E4A88B8AF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{246E6AB6-836D-4B22-9DEE-7E4A88B8AF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6F3C99C-CE99-496D-AE94-167EBF1E0C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6F3C99C-CE99-496D-AE94-167EBF1E0C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6F3C99C-CE99-496D-AE94-167EBF1E0C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6F3C99C-CE99-496D-AE94-167EBF1E0C71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6F3C99C-CE99-496D-AE94-167EBF1E0C71} = {426C5DB9-2243-4B94-A607-A95C0F10C355}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44D7391F-31CD-4ED1-A440-50151AC7DF1A}
