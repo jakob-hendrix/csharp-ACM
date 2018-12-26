@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AMC.BL
 {
     public class Customer
     {
+        // Default Constructor
         public Customer()
         {
             InstanceCount += 1;
         }
 
-        public static int InstanceCount { get; set; }
+        public Customer(int customerId) : this()
+        {
+            this.CustomerId = customerId;
+        }
+
+        public static int InstanceCount{ get; set; }
 
         private string _lastName;
 
@@ -45,6 +52,18 @@ namespace AMC.BL
                 }
                 return fullName;
             }
+        }
+
+        public bool Validate()
+        {
+            var isValid = true;
+
+            /* What makes a customer a valid entry member?
+             */
+            if (string.IsNullOrWhiteSpace(LastName)) isValid = false;
+            if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
+
+            return isValid;
         }
 
     }
