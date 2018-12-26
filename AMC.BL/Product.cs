@@ -23,27 +23,6 @@ namespace AMC.BL
         public string ProductDescription { get; set; }
         public string ProductName { get; set; }
 
-        /// <summary>
-        ///  Retrieve this product
-        /// </summary>
-        /// <param name="productId"></param>
-        /// <returns></returns>
-        public Product Retrieve(int productId)
-        {
-            // Code to retrieve the defined product
-            return new Product();
-        }
-
-        /// <summary>
-        /// Saves the current product
-        /// </summary>
-        /// <returns></returns>
-        public bool Save()
-        {
-            // Code that saves the defined product
-            return true;
-        }
-
         public bool Validate()
         {
             var isValid = true;
