@@ -16,9 +16,14 @@ namespace AMC.BL
             this.OrderId = orderId;
         }
 
+
+        public int CustomerId { get; set; }
+        public int ShippingAddressId { get; set; }
+
         // Value type - nullable. Tracks date, time, and time zone offset
         public DateTimeOffset? OrderDate { get; set; }
         public int OrderId { get; set; }
+        public List<OrderItem> orderItems { get; set; }
 
         /// <summary>
         /// Validate the current order

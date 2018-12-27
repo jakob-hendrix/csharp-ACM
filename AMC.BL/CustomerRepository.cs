@@ -1,18 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AMC.BL
 {
     public class CustomerRepository
     {
+        // Private property to hold this repo since no other code should be touching it
+        private AddressRepository addressRepository { get; set; }
+
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+
         /// <summary>
         /// Retrieve one customer.
         /// </summary>
         public Customer Retrieve(int customerId)
         {
             // Code that retreives the defined customer
-            Customer customer = new Customer(customerId);
+            Customer customer = new Customer(customerId);  //"uses a" Customer
+            customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
 
             // Temp code to return a populated customer
             if (customerId == 1)
@@ -37,7 +47,7 @@ namespace AMC.BL
         /// Saves the current customer
         /// </summary>
         /// <returns></returns>
-        public bool Save()
+        public bool Save(Customer customer)
         {
             // Code that saves the defined customer
             return true;

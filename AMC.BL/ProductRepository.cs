@@ -33,7 +33,7 @@ namespace AMC.BL
         /// Saves the current product
         /// </summary>
         /// <returns></returns>
-        public bool Save()
+        public bool Save(Product product)
         {
             // Code that saves the defined product
             return true;

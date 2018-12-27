@@ -7,13 +7,19 @@ namespace AMC.BL
     {
         // Default Constructor
         public Customer()
+            : this(0)
         {
-            InstanceCount += 1;
+
         }
 
-        public Customer(int customerId) : this()
+        public Customer(int customerId)
         {
+            Customer.InstanceCount += 1;
             this.CustomerId = customerId;
+
+            /* Where do this data come from?
+             */ 
+            AddressList = new List<Address>();  // empty list instead of null
         }
 
         public static int InstanceCount{ get; set; }
@@ -31,6 +37,11 @@ namespace AMC.BL
                 _lastName = value;
             }
         }
+
+        public int CustomerType { get; set; }
+
+        public List<Address> AddressList { get; set; }  // default is null
+
         public string FirstName { get; set; }
 
         public string EmailAddress { get; set; }

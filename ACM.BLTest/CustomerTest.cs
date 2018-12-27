@@ -66,6 +66,7 @@ namespace ACM.BLTest
 
             // -- Act
 
+
             // -- Assert
             Assert.AreEqual(Customer.InstanceCount,3);
         }
