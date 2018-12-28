@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AMC.BL
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -23,7 +23,7 @@ namespace AMC.BL
         public string ProductDescription { get; set; }
         public string ProductName { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -31,6 +31,11 @@ namespace AMC.BL
             if (CurrentPrice == null) isValid = false;
 
             return isValid;
+        }
+
+        public override string ToString()
+        {
+            return ProductName;
         }
     }
 }

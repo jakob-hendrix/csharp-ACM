@@ -26,6 +26,10 @@ namespace AMC.BL
                 product.CurrentPrice = 15.96M;
             }
 
+            Object myObject = new object();
+            Console.WriteLine($"Object: {myObject.ToString()}");
+            Console.WriteLine($"Object: {product.ToString()}");
+
             return product;
         }
 
@@ -35,8 +39,20 @@ namespace AMC.BL
         /// <returns></returns>
         public bool Save(Product product)
         {
-            // Code that saves the defined product
-            return true;
+            var success = true;
+
+            if (product.HasChanges && product.IsValid)
+            {
+                if (product.IsNew)
+                {
+                    // Call an Insert Stored Procedure
+                }
+                else
+                {
+                    // Call an update Stored Procedure
+                }
+            }
+            return success;
         }
     }
 }

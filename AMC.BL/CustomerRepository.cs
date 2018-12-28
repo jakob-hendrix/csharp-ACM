@@ -49,8 +49,20 @@ namespace AMC.BL
         /// <returns></returns>
         public bool Save(Customer customer)
         {
-            // Code that saves the defined customer
-            return true;
+            var success = true;
+
+            if (customer.HasChanges && customer.IsValid)
+            {
+                if (customer.IsNew)
+                {
+                    // Call an Insert Stored Procedure
+                }
+                else
+                {
+                    // Call an update Stored Procedure
+                }
+            }
+            return success;
         }
     }
 }

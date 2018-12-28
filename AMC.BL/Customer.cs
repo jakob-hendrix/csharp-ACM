@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AMC.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
         // Default Constructor
         public Customer()
@@ -65,7 +65,7 @@ namespace AMC.BL
             }
         }
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -75,6 +75,11 @@ namespace AMC.BL
             if (string.IsNullOrWhiteSpace(EmailAddress)) isValid = false;
 
             return isValid;
+        }
+
+        public override string ToString()
+        {
+            return FullName;
         }
 
     }

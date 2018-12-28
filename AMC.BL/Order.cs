@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AMC.BL
 {
-    public class Order
+    public class Order : EntityBase
     {
         public Order()
         {
@@ -29,13 +29,18 @@ namespace AMC.BL
         /// Validate the current order
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
             if (OrderDate == null) isValid = false;
 
             return isValid;
+        }
+
+        public override string ToString()
+        {
+            return $"{OrderDate} ({OrderId})";
         }
     }
 }
