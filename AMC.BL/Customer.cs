@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 
 namespace AMC.BL
 {
-    public class Customer : EntityBase
+    public class Customer : EntityBase, ILoggable
     {
         // Default Constructor
         public Customer()
@@ -79,6 +80,12 @@ namespace AMC.BL
         public override string ToString()
         {
             return FullName;
+        }
+
+        public string Log()
+        {
+            var logString = $"{this.CustomerId}: Name: {this.FullName} Email: {this.EmailAddress} Status: {this.EntityState.ToString()}";
+            return logString;                
         }
 
     }

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Acme.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AMC.BL
 {
-    public class Order : EntityBase
+    public class Order : EntityBase, ILoggable
     {
         public Order()
         {
@@ -41,6 +42,12 @@ namespace AMC.BL
         public override string ToString()
         {
             return $"{OrderDate} ({OrderId})";
+        }
+
+        public string Log()
+        {
+            var logString = $"{this.OrderId}: Order Date: {this.OrderDate} Status: {this.EntityState.ToString()}";
+            return logString;
         }
     }
 }

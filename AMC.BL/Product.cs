@@ -5,7 +5,7 @@ using Acme.Common;
 
 namespace AMC.BL
 {
-    public class Product : EntityBase
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -49,6 +49,12 @@ namespace AMC.BL
         public override string ToString()
         {
             return ProductName;
+        }
+
+        public string Log()
+        {
+            var logString = $"{this.ProductId}: ProductName: {this.ProductName} Detail: {this.ProductDescription} Status: {this.EntityState.ToString()}";
+            return logString;
         }
     }
 }
