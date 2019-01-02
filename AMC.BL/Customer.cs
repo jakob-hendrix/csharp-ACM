@@ -14,7 +14,6 @@ namespace AMC.BL
 
         public Customer(int customerId)
         {
-            Customer.InstanceCount += 1;
             this.CustomerId = customerId;
 
             /* Where do this data come from?

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Acme.Common;
 
 namespace AMC.BL
 {
@@ -21,7 +22,19 @@ namespace AMC.BL
         public decimal? CurrentPrice { get; set; }
         public int ProductId { get; private set; }
         public string ProductDescription { get; set; }
-        public string ProductName { get; set; }
+        //public string ProductName { get; set; }
+
+        private string _ProductName;
+
+        public string ProductName   
+        {
+            get
+            {
+                return _ProductName.InsertSpaces();
+            }
+            set { _ProductName = value; }
+        }
+
 
         public override bool Validate()
         {
